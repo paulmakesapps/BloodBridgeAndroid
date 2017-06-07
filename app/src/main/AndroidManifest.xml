@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.paulmakesapps.paul.bloodbridge" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/testface"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Main"
+            android:label="@string/app_name" >
+        </activity>
+z
+        <activity
+            android:name=".NamingOpen"
+            android:label="@string/title_activity_naming_open"
+            android:windowSoftInputMode="adjustResize"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Combat"
+            android:label="@string/title_activity_combat"
+            >
+        </activity>
+    </application>
+
+</manifest>

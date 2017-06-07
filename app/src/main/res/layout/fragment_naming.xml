@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tavern_bkg">
+
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:id="@+id/dialogscroll"
+        android:background="#56848381"
+        android:layout_below="@+id/imageView"
+        android:layout_alignLeft="@+id/replyscroll"
+        android:layout_alignStart="@+id/replyscroll">
+
+        <LinearLayout
+            android:id="@+id/inflatedialog"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:background="#3ab2b2ad">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/shopkeep"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:id="@+id/replyscroll"
+        android:background="#56848381"
+        android:layout_marginBottom="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:id="@+id/inflatereply"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:background="#3ab2b2ad">
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
