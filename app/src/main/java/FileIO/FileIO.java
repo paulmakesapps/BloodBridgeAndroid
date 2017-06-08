@@ -5,9 +5,11 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.paulmakesapps.paul.bloodbridge.Main;
+import com.paulmakesapps.paul.bloodbridge.NamingOpen;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
@@ -16,85 +18,20 @@ import GenericCharacter.*;
 /**
  * Created by Paul on 6/4/2017.
  */
-public class FileIO extends Main{
+public class FileIO {
 
     public FileIO(){
 
     }
 
-    public void appendToFile(String filename) {
-            try {
 
-                OutputStreamWriter osw = new OutputStreamWriter(this.openFileOutput(filename+".txt", Context.MODE_WORLD_READABLE));
-                BufferedWriter bw = new BufferedWriter(osw);
-
-                bw.append(filename);
-                bw.newLine();
-
-                //Toast.makeText(getActivity(), filename + " saved", Toast.LENGTH_SHORT).show();
-                bw.close();
-                osw.close();
-
-            } catch (Exception e) {
-
-            }
-    }
-
-    public void readFile(String filename, int i) {
-        String line = "xcv";
-
-
-
-        try {
-
-                InputStreamReader isr = new InputStreamReader(this.openFileInput(filename + ".txt"));
-
-            BufferedReader br = new BufferedReader(isr);
-
-            while (line != null) {
-
-                line = br.readLine();
-                //return[i] = line;
-                i++;
-
-            }
-            br.close();
-            isr.close();
-
-        } catch (Exception e) {
-
-        }
-    }
-
-    public void writeToFile(String filename) {
-
-        String hold = filename + ".txt";
-        try {
-
-
-            OutputStreamWriter osw = new OutputStreamWriter(this.openFileOutput(hold, Context.MODE_WORLD_WRITEABLE));
-            BufferedWriter bw = new BufferedWriter(osw);
-
-                    bw.write(hold);
-                    bw.newLine();
-
-            bw.close();
-            osw.close();
-
-        } catch (Exception e) {
-            Log.e("MYAPP", "exception", e);
-        }
-    }
-
-
-    public GenericCharacter getMainCharacter() {
+    public GenericCharacter getPlayer(Context cnx) {
         GenericCharacter chr= new GenericCharacter("name","Warrior","generic description","mainchar",8,14,1,1,5);
 String line="xcv";
         int i=0;
         try {
 
-            InputStreamReader isr = new InputStreamReader(this.openFileInput("player.txt"));
-
+            InputStreamReader isr = new InputStreamReader(cnx.openFileInput("player.txt"));
             BufferedReader br = new BufferedReader(isr);
 
             while (line != null) {
@@ -102,36 +39,50 @@ String line="xcv";
                 if(i==0) {
                     chr.setName(br.readLine());
                 }
-
                 if(i==1) {
                     chr.setType(br.readLine());
                 }
+                if(i==2) {
+                    chr.setDescription(br.readLine());
+                }
+                if(i==3) {
+                    chr.setImgName(br.readLine());
+                }
+                if(i==4) {
+                    chr.setAtk(Integer.parseInt(br.readLine()));
+                }
+                if(i==5) {
+                    chr.setDef(Integer.parseInt(br.readLine()));
+                }
+                if(i==6) {
+                    chr.setDmg(Integer.parseInt(br.readLine()));
+                }
+                if(i==7) {
+                    chr.setLevel(Integer.parseInt(br.readLine()));
+                }
+                if(i==8) {
+                    chr.setHealth(Integer.parseInt(br.readLine()));
+                }
 
-
-
-
-
-                //line = br.readLine();
-                //return[i] = line;
                 i++;
 
             }
             br.close();
             isr.close();
 
-        } catch (Exception e) {
-
-        }
+        } catch (Exception e) {}
 
 return chr;
 
     }
 
 
-        public void saveMainCharacter(GenericCharacter chr) {
+        public void savePlayer(GenericCharacter chr,Context mcontext) {
         try {
-            OutputStreamWriter osw = new OutputStreamWriter(this.openFileOutput("player.txt", Context.MODE_WORLD_READABLE));
+            OutputStreamWriter osw = new OutputStreamWriter(mcontext.openFileOutput("player.txt", Context.MODE_WORLD_READABLE));
             BufferedWriter bw = new BufferedWriter(osw);
+
+            Toast.makeText(mcontext,"FROM SAVE PLAYER",Toast.LENGTH_LONG).show();
 
    // public Character(String name, String type, String description, String imgName,int atk, int def, int dmg,int level,int health)
             bw.write(chr.getName());
@@ -160,5 +111,18 @@ return chr;
             Log.e("MYAPP", "exception", e);
         }
     }
+
+    public void saveData(Context mContext) {
+        Toast.makeText(mContext,"FROM SAVE DATA",Toast.LENGTH_LONG).show();
+
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(mContext.openFileOutput("file.txt", Context.MODE_WORLD_READABLE));
+            outputStreamWriter.write("hallo welt");
+            outputStreamWriter.close();
+        }
+        catch (IOException e) {
+        }
+    }
+
 
 }

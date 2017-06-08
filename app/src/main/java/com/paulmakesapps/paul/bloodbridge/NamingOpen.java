@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
 
 import FileIO.FileIO;
 import GenericCharacter.GenericCharacter;
@@ -23,10 +28,8 @@ public class NamingOpen extends ActionBarActivity {
     TextView npcDialog;
     EditText entername;
 
-    String playername;
+    public String playername;
 
-GenericCharacter wolffight_char;
-    GenericCharacter zombiefight_char;
 
 
 FileIO fio;
@@ -36,8 +39,6 @@ FileIO fio;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_naming);
 
-        wolffight_char= new GenericCharacter("name","Warrior","generic description","mainchar",8,14,1,1,5);
-        zombiefight_char= new GenericCharacter("name","Rogue","generic description","mainchar",7,15,1,1,5);
 
         final LinearLayout dl = (LinearLayout) findViewById(R.id.inflatedialog);
 
@@ -50,7 +51,6 @@ FileIO fio;
         dl.addView(npcDialog);
 
 
-
                 //promt user for name
         final LinearLayout userLayout = (LinearLayout) findViewById(R.id.inflatereply);
         entername = new EditText(this);
@@ -61,6 +61,7 @@ FileIO fio;
 
         userLayout.addView(entername);
 
+        playername="";
 
         final Button reply1= new Button(this);
         reply1.setText("Yes");
@@ -73,13 +74,20 @@ FileIO fio;
         // Set click listener for button
         reply1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                GenericCharacter zombiefight_char= new GenericCharacter("name","Rogue","generic description","mainchar",7,15,1,1,5);
+                Toast.makeText(NamingOpen.this,"Pressed ",Toast.LENGTH_LONG).show();
 
                 zombiefight_char.setName(playername);
-                //fio.saveMainCharacter(zombiefight_char);
+                FileIO fio1= new FileIO();
+                 fio1.savePlayer(zombiefight_char,NamingOpen.this);
+//
+//                GenericCharacter test=fio1.getPlayer(NamingOpen.this);
+//
+//                Toast.makeText(NamingOpen.this,"NAME>> "+test.getName(),Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(NamingOpen.this, Combat.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+//                Intent intent = new Intent(NamingOpen.this, Combat.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
 
                 //cut to zombie fight
             }
@@ -95,9 +103,11 @@ FileIO fio;
         // Set click listener for button
         reply2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                GenericCharacter wolffight_char= new GenericCharacter("name","Warrior","generic description","mainchar",8,14,1,1,5);
 
                 wolffight_char.setName(playername);
-               // fio.saveMainCharacter(wolffight_char);
+                FileIO fio1= new FileIO();
+                fio1.savePlayer(wolffight_char,NamingOpen.this);
 
                 Intent intent = new Intent(NamingOpen.this, Combat.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -138,11 +148,6 @@ FileIO fio;
 
     }
 
-    public void initChar(){
-        wolffight_char= new GenericCharacter("name","Warrior","generic description","mainchar",8,14,1,1,5);
-        zombiefight_char= new GenericCharacter("name","Rogue","generic description","mainchar",7,15,1,1,5);
-
-    }
 
 
 //    @Override
@@ -166,4 +171,7 @@ FileIO fio;
 //
 //        return super.onOptionsItemSelected(item);
 //    }
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.paulmakesapps.paul.bloodbridge;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,6 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 import GenericCharacter.*;
 import FileIO.*;
@@ -22,15 +26,16 @@ public class Combat extends ActionBarActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_combat);
 
+        fio= new FileIO();
+
         pname=(TextView) findViewById(R.id.pname);
         patk=(TextView) findViewById(R.id.patk);
         pdef=(TextView) findViewById(R.id.pdef);
         pdmg=(TextView) findViewById(R.id.pdmg);
         phealth=(TextView) findViewById(R.id.phealth);
-
-//        player=fio.getMainCharacter();
+      // player=fio.getPlayer(Combat.this);
 //
-        pname.setText("VBVBVB");
+        pname.setText("GG alin");
 //        patk.setText(player.getAtk());
 //        pdef.setText(player.getDef());
 //        pdmg.setText(player.getDmg());
@@ -39,7 +44,6 @@ public class Combat extends ActionBarActivity implements View.OnClickListener {
 
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -16,7 +16,8 @@
         android:id="@+id/oppname"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,7 +26,8 @@
         android:id="@+id/oat"
         android:layout_alignBottom="@+id/opatk"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +37,8 @@
         android:id="@+id/opatk"
         android:layout_below="@+id/oppname"
         android:layout_alignRight="@+id/oppname"
-        android:layout_alignEnd="@+id/oppname" />
+        android:layout_alignEnd="@+id/oppname"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +48,8 @@
         android:layout_alignBaseline="@+id/opdef"
         android:layout_alignBottom="@+id/opdef"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,7 +59,8 @@
         android:id="@+id/opdef"
         android:layout_below="@+id/opatk"
         android:layout_alignLeft="@+id/opatk"
-        android:layout_alignStart="@+id/opatk" />
+        android:layout_alignStart="@+id/opatk"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,7 +69,8 @@
         android:id="@+id/opd"
         android:layout_alignBottom="@+id/opdmg"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,7 +80,8 @@
         android:id="@+id/opdmg"
         android:layout_below="@+id/opdef"
         android:layout_alignLeft="@+id/opdef"
-        android:layout_alignStart="@+id/opdef" />
+        android:layout_alignStart="@+id/opdef"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -84,7 +91,8 @@
         android:id="@+id/ophealth"
         android:layout_below="@+id/opdmg"
         android:layout_alignLeft="@+id/opdmg"
-        android:layout_alignStart="@+id/opdmg" />
+        android:layout_alignStart="@+id/opdmg"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -93,7 +101,8 @@
         android:id="@+id/ophe"
         android:layout_alignBottom="@+id/ophealth"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,7 +112,8 @@
         android:id="@+id/pname"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -113,7 +123,8 @@
         android:id="@+id/patk"
         android:layout_below="@+id/pname"
         android:layout_alignRight="@+id/oppname"
-        android:layout_alignEnd="@+id/oppname" />
+        android:layout_alignEnd="@+id/oppname"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -122,7 +133,8 @@
         android:id="@+id/pak"
         android:layout_alignBottom="@+id/patk"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -132,7 +144,8 @@
         android:id="@+id/pdef"
         android:layout_below="@+id/patk"
         android:layout_alignLeft="@+id/patk"
-        android:layout_alignStart="@+id/patk" />
+        android:layout_alignStart="@+id/patk"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -141,7 +154,8 @@
         android:id="@+id/pdf"
         android:layout_alignBottom="@+id/pdef"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -151,7 +165,8 @@
         android:id="@+id/pdmg"
         android:layout_below="@+id/pdf"
         android:layout_alignLeft="@+id/pdef"
-        android:layout_alignStart="@+id/pdef" />
+        android:layout_alignStart="@+id/pdef"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -160,7 +175,8 @@
         android:id="@+id/pdamag"
         android:layout_alignBottom="@+id/pdmg"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -170,7 +186,8 @@
         android:id="@+id/phealth"
         android:layout_below="@+id/pdmg"
         android:layout_alignLeft="@+id/pdmg"
-        android:layout_alignStart="@+id/pdmg" />
+        android:layout_alignStart="@+id/pdmg"
+        android:textColor="#ffffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -179,7 +196,8 @@
         android:id="@+id/phtl"
         android:layout_alignBottom="@+id/phealth"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
 
     <Button
         android:layout_width="wrap_content"
